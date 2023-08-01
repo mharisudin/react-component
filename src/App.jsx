@@ -22,7 +22,7 @@ export default function App() {
                         <IconLogin />
                         Login
                     </Button>
-                    <Button>
+                    <Button onClick={() => console.log('Hello Register')}>
                         <IconBrandFacebook />
                         Register
                     </Button>
@@ -33,10 +33,10 @@ export default function App() {
 }
 
 function Button(props) {
-    const { children, type, text } = props;
+    const { children, text } = props;
     return (
         <button
-            type={type}
+            {...props}
             className={
                 '[&>svg]:w-5 [&>svg]:h-5 [&>svg]:stroke-1 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded'
             }
