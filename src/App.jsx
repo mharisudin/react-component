@@ -18,7 +18,7 @@ export default function App() {
                     <Button text='Register' /> */}
 
                     {/* style component with icons use calibraket block*/}
-                    <Button>
+                    <Button type='Submit'>
                         <IconLogin />
                         Login
                     </Button>
@@ -33,13 +33,15 @@ export default function App() {
 }
 
 function Button(props) {
+    const { children, type, text } = props;
     return (
         <button
+            type={type}
             className={
                 '[&>svg]:w-5 [&>svg]:h-5 [&>svg]:stroke-1 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded'
             }
         >
-            {props.text || props.children}
+            {text || children}
         </button>
     );
 }
