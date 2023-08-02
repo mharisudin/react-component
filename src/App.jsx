@@ -1,57 +1,37 @@
-import {
-    IconBrandFacebook,
-    IconBrandGithub,
-    IconLogin,
-    IconRegistered,
-} from '@tabler/icons-react';
-import clsx from 'clsx';
+import Button from './components/Button';
+import Card from './components/Card';
 
-export default function App() {
+function App() {
     return (
         <div>
-            <div
-                className={
-                    'bg-slate-600 grid place-content-center min-h-screen'
-                }
-            >
-                <div className={'flex gap-x-2'}>
-                    {/* style component 1 */}
-                    {/* <Button text='Login' />
-                    <Button text='Register' /> */}
-
-                    {/* style component with icons use calibraket block*/}
-                    <Button className={'bg-blue-500'} type='Submit'>
-                        <IconLogin />
-                        Login
-                    </Button>
-                    <Button
-                        className={'bg-pink-500'}
-                        onClick={() => console.log('Hello Register')}
-                    >
-                        <IconBrandFacebook />
-                        Register
-                    </Button>
-                    <Button onClick={() => console.log('Hello Register')}>
-                        <IconBrandGithub />
-                        Reset
-                    </Button>
+            <div className={'bg-slate-100 antialiased tracking-tighter flex items-center justify-center min-h-screen'}>
+                <div className='max-w-md flex items-center gap-4 w-full'>
+                    <Card>
+                        <Card.Title>Hello React</Card.Title>
+                        <Card.Body>
+                            Elit incididunt officia sint reprehenderit excepteur. Fugiat dolor fugiat aliqua do adipisicing. Nostrud consequat elit et
+                            consectetur. Aute nulla laboris culpa amet mollit minim. Consequat ad quis ullamco ut proident aute proident duis sint
+                            consectetur.
+                        </Card.Body>
+                        <Card.Footer>
+                            <Button>Load More</Button>
+                        </Card.Footer>
+                    </Card>
+                    <Card>
+                        <Card.Title>Hello React</Card.Title>
+                        <Card.Body>
+                            Elit incididunt officia sint reprehenderit excepteur. Fugiat dolor fugiat aliqua do adipisicing. Nostrud consequat elit et
+                            consectetur. Aute nulla laboris culpa amet mollit minim. Consequat ad quis ullamco ut proident aute proident duis sint
+                            consectetur.
+                        </Card.Body>
+                        <Card.Footer>
+                            <Button>Load More</Button>
+                        </Card.Footer>
+                    </Card>
                 </div>
             </div>
         </div>
     );
 }
 
-function Button(props) {
-    const { className = 'bg-blue-500', children, text } = props;
-    return (
-        <button
-            {...props}
-            className={clsx(
-                className,
-                '[&>svg]:w-5 [&>svg]:h-5 [&>svg]:stroke-1 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded'
-            )}
-        >
-            {text || children}
-        </button>
-    );
-}
+export default App;
